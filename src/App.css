@@ -1,0 +1,55 @@
+.container {
+  float: left;
+  width: calc(100% - 30px);
+  box-sizing: border-box;
+  margin: 15px;
+}
+
+.page-header {
+  width: 100%;
+  box-sizing: border-box;
+  height: 50px;
+  border-bottom: 1px solid gray;
+  margin-bottom: 15px;
+  float: left;
+}
+
+.left-panel {
+  float: left;
+  width: 20%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.left-panel ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.left-panel ul li {
+  padding: 8px 0;
+  width: 100%;
+  float: left;
+}
+
+.main-content {
+  width: 80%;
+  box-sizing: border-box;
+  padding: 15px;
+  float: left;
+}
+
+.card {
+  float: left;
+  width: 20%;
+  box-sizing: border-box;
+  height: 180px;
+  padding: 10px;
+}
+
+.add-product label {
+  width: 100px;
+  margin-right: 10px;
+  display: inline-block;
+}
