@@ -1,20 +1,32 @@
 import { useState, useEffect } from "react";
+import Popup from "../../../components/Popup/Popup";
 
-const AddProduct = () => {
-  const [formData, setFormData] = useState({});
-  const [showData, setShowData] = useState(false);
-
+const AddProduct = ({ setFormData, formData }) => {
   const updateFormData = (prop, value) => {
-    setShowData(false);
     setFormData({ ...formData, [prop]: value });
   };
+  // console.log(formData);
+  // Class base component
+  // componentDidMount => 1 time at time of component mount
+  // componentDidUpdate => After component mount on very state change
+  // componentUnmount => On component unmount
 
-  const handleAddClick = (e) => {
-    e.preventDefault();
-    setShowData(true);
-  };
+  // Function base component
+  // useEffect => all kind of side effects.
+  // if dependency array is empty then it will behave like componentDidMount
+  // if dependency array is not empty, then on evry update of the array elements it will be called i.e. behave like componentDidUpdate
+  // Inside useEffect callback funtion if there is any funtion in its return that funtion will only be called on component unmount.
 
-  console.log(formData);
+  useEffect(() => {
+    if (formData.price < 1) {
+      setFormData((formData) => {
+        return {
+          ...formData,
+          price: 1,
+        };
+      });
+    }
+  }, [formData.price]);
 
   return (
     <>
@@ -50,15 +62,7 @@ const AddProduct = () => {
             onChange={(e) => updateFormData("price", e.target.value)}
           />
         </p>
-        <button onClick={handleAddClick}>Add</button>
       </form>
-
-      <div className="card">
-        <div>Image: {showData && formData.imageURL}</div>
-        <p>Name: {showData && formData.name}</p>
-        <p>Description : {showData && formData.description}</p>
-        <p>Price: {showData && formData.price} </p>
-      </div>
     </>
   );
 };

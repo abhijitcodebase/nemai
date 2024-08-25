@@ -53,3 +53,26 @@
   margin-right: 10px;
   display: inline-block;
 }
+
+button.primary {
+  min-width: 100px;
+  border: none;
+  background: blue;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 6px;
+}
+
+button.secondary {
+  min-width: 100px;
+  border: none;
+  background: rgb(174, 0, 255);
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 6px;
+}
+
+.fullwidth {
+  float: left;
+  width: 100%;
+}
